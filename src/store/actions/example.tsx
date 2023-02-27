@@ -1,12 +1,10 @@
-import { SET_EXAMPLE, SET_EXAMPLE_SELECTED_ID, SET_EXAMPLE_LOADING } from '../types/example';
+import { SET_EXAMPLE_SELECTED_ID, SET_EXAMPLE_LOADING } from '../types/example';
 
 import { Dispatch } from 'redux';
 
 /**
  * Busca uma lista de entidades na API
- * @param {*} page Página a ser buscada, número de elementos por página é configurado no
- * backend, em `pagination.helper.ts`
-
+ * @param {*} page Página a ser buscada
  */
 export const getExample = (page: number) => async (dispatch: Dispatch) => {
     dispatch({
@@ -39,8 +37,7 @@ export const updateExample = (example: any) => async (dispatch: Dispatch) => {
 };
 
 /**
- * Busca as entidades que correspondem com o input informado, as colunas que serão
- * comparadas estão no método betterSearch de cada serviço
+ * Busca as entidades que correspondem com o input informado
  * @param {*} input Input que será enviado para a busca
 
  */
@@ -64,8 +61,8 @@ export const deleteExample = (exampleSelectedId: any) => async (dispatch: Dispat
 };
 
 /**
- * Busca os detalhes da notícia informada, para mostrar nos modais
- * @param {String} exampleSelectedId UUID da notícia
+ * Busca os detalhes da entidade informada, para mostrar nos modais
+ * @param {String} exampleSelectedId UUID da entidade
  */
 export const getExampleById = (exampleSelectedId: any) => async (dispatch: Dispatch) => {
     dispatch({
@@ -75,7 +72,7 @@ export const getExampleById = (exampleSelectedId: any) => async (dispatch: Dispa
 };
 
 /**
- * Seta o UUID da entidade como o selecionado, para ser editado ou visualizado pelos modais
+ * Seta o UUID da entidade como o selecionado, para ser editado ou visualizado
  * @param {String} exampleSelectedId UUID a ser selecionado
  */
 export const setExampleSelectedId = (exampleSelectedId: any) => ({
